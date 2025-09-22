@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Биология и гигиена в Minecraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #2F2F2F; /* Нейтральный темный фон */
+            color: #FFFFFF;
+        }
+        .pixelated {
+            image-rendering: pixelated;
+        }
+        .pixel-border {
+            border: 4px solid #000;
+            outline: 2px solid #fff;
+            box-shadow: 4px 4px 0 #000;
+        }
+        .block-bg {
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+        }
+        .pixel-button {
+            border: 4px solid #000;
+            outline: 2px solid #fff;
+            box-shadow: 4px 4px 0 #000;
+            transition: all 0.1s ease-in-out;
+            cursor: pointer;
+        }
+        .pixel-button:hover {
+            box-shadow: 2px 2px 0 #000;
+            transform: translate(2px, 2px);
+        }
+        .correct-answer {
+            background-color: #38a169; /* bg-green-600 */
+        }
+        .incorrect-answer {
+            background-color: #e53e3e; /* bg-red-600 */
+        }
+    </style>
+</head>
+<body class="p-8 flex flex-col items-center min-h-screen">
+
+    <!-- Main Content Block -->
+    <div class="block-bg p-6 rounded-lg pixel-border max-w-4xl w-full">
+        <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8">
+            <!-- Left Side - Sword Image -->
+            <div class="flex-shrink-0">
+                <img src="https://godanparty.pl/img/1181947/miecz-minecraft-enchanted.jpg" alt="Зачарованный меч" class="pixelated w-32 h-auto pixel-border">
+            </div>
+
+            <!-- Right Side - Content -->
+            <div class="flex-grow text-center md:text-left">
+                <h1 class="text-3xl lg:text-5xl mb-4 text-yellow-300">Гигиена в мире Minecraft</h1>
+                <p class="text-base lg:text-lg mb-6">
+                    Привет, Игрок! В мире блоков и криперов важно знать, как защитить свой инвентарь (тело) от вредных эффектов. Сегодня мы создадим книгу знаний о тайных врагах — микробах и болезнях.
+                </p>
+
+                <div class="bg-black/50 p-4 rounded-lg pixel-border mb-6">
+                    <h2 class="text-2xl text-blue-300 mb-4">Блок: Профилактика</h2>
+                    <p class="text-left text-sm lg:text-base">
+                        Как и в игре, для защиты от опасностей нужно готовить зелья и использовать правильные инструменты.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-sm lg:text-base mt-2">
+                        <li>Ешь только свежую еду (жареные стейки, а не гнилую плоть).</li>
+                        <li>Мой руки после добычи ресурсов (после шахты — к воде!).</li>
+                        <li>Не ешь сырую курицу (риск пищевых отравлений).</li>
+                        <li>Будь осторожен с неизвестными грибами (не все полезны!).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Bestiary Section -->
+        <div id="bestiary" class="mt-8">
+            <h2 class="text-2xl text-green-400 mb-4 text-center">Бестиарий: Тайные враги</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Микроб #1: Грязевик -->
+                <div class="block-bg p-4 rounded-lg pixel-border">
+                    <img src="https://minecraft-inside.ru/uploads/files/2020-11/thumb/BcMob.png" alt="Микроб Грязевик" class="w-full h-auto rounded-lg pixelated mb-4">
+                    <h3 class="text-xl font-bold text-yellow-300">Грязевик</h3>
+                    <p class="text-sm mt-2">
+                        Этот микроб живёт на грязных руках. Чтобы его победить, используй зелье "Мыльная Вода"!
+                    </p>
+                </div>
+                <!-- Микроб #2: Токсичный Зложук -->
+                <div class="block-bg p-4 rounded-lg pixel-border">
+                    <img src="https://minecraft-inside.ru/uploads/files/2024-11/672a6cf6ba58f.png" alt="Микроб Токсичный Зложук" class="w-full h-auto rounded-lg pixelated mb-4">
+                    <h3 class="text-xl font-bold text-yellow-300">Токсичный Зложук</h3>
+                    <p class="text-sm mt-2">
+                        Скрывается в испорченной еде. Чтобы избежать его атаки, проверяй срок годности и не ешь гнилую плоть!
+                    </p>
+                </div>
+                <!-- Микроб #3: Водяной Паразит -->
+                <div class="block-bg p-4 rounded-lg pixel-border">
+                    <img src="https://ru-minecraft.ru/uploads/posts/2021-07/1625160051_1-9.jpg" alt="Микроб Водяной Паразит" class="w-full h-auto rounded-lg pixelated mb-4">
+                    <h3 class="text-xl font-bold text-yellow-300">Водяной Паразит</h3>
+                    <p class="text-sm mt-2">
+                        Обитает в грязной воде. Всегда кипяти воду или используй фильтр, чтобы он не поселился в твоём инвентаре.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Button and hidden theory block -->
+        <div class="mt-8 text-center">
+            <button id="showTheoryBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-lg pixel-button">
+                Продолжить исследовать
+            </button>
+        </div>
+
+        <div id="theory" class="mt-8 text-center" style="display: none;">
+            <h2 class="text-2xl text-red-400 mb-4">Книга знаний: Основы гигиены</h2>
+            <div class="bg-black/50 p-4 rounded-lg pixel-border text-left">
+                <p class="text-base lg:text-lg mb-4">
+                    <b>Глисты и их профилактика:</b> Глисты — это паразитические черви, которые могут жить в организме человека. Они попадают туда через грязные руки, немытые фрукты и овощи, а также через сырое мясо или рыбу.
+                </p>
+                <p class="text-base lg:text-lg">
+                    Чтобы избежать заражения, нужно всегда тщательно мыть руки с мылом, особенно перед едой. Фрукты и овощи нужно мыть под проточной водой. Мясо и рыбу нужно хорошо прожаривать или проваривать.
+                </p>
+                <p class="text-base lg:text-lg mt-4">
+                    <b>Пищевые отравления:</b> Отравления случаются, когда мы едим пищу, зараженную бактериями. Симптомы: тошнота, рвота, боль в животе. Чтобы избежать отравления, всегда проверяйте срок годности продуктов, правильно храните еду в холодильнике и не оставляйте готовые блюда надолго при комнатной температуре.
+                </p>
+            </div>
+            <div class="mt-4 text-center">
+                <button id="hideTheoryBtn" class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg text-lg pixel-button">
+                    Вернуться назад
+                </button>
+            </div>
+            <div class="mt-4 text-center">
+                <button id="showQuizBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-lg pixel-button">
+                    Начать викторину
+                </button>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quiz" class="mt-8 text-center" style="display: none;">
+            <h2 class="text-2xl text-green-400 mb-4">Викторина: Испытание на выживание</h2>
+            <div class="bg-black/50 p-4 rounded-lg pixel-border text-left">
+                <div class="space-y-6">
+                    <!-- Question 1 -->
+                    <div>
+                        <p class="text-lg font-bold mb-2">1. Ты добыл руду в шахте. Что нужно сделать, прежде чем съесть золотое яблоко?</p>
+                        <div class="space-y-2 text-sm">
+                            <button class="w-full text-left p-3 rounded-lg block-bg pixel-button hover:bg-gray-700" data-question="1" data-correct="false">А. Построить портал в ад</button>
+                            <button class="w-full text-left p-3 rounded-lg block-bg pixel-button hover:bg-gray-700" data-question="1" data-correct="true">Б. Помыть руки</button>
+                            <button class="w-full text-left p-3 rounded-lg block-bg pixel-button hover:bg-gray-700" data-question="1" data-correct="false">В. Скрафтить ещё один меч</button>
+                        </div>
+                    </div>
+                    <!-- Question 2 -->
+                    <div>
+                        <p class="text-lg font-bold mb-2">2. Что поможет тебе избежать встречи с "Токсичным Зложуком"?</p>
+                        <div class="space-y-2 text-sm">
+                            <button class="w-full text-left p-3 rounded-lg block-bg pixel-button hover:bg-gray-700" data-question="2" data-correct="false">А. Построить дом из гнилой плоти</button>
+                            <button class="w-full text-left p-3 rounded-lg block-bg pixel-button hover:bg-gray-700" data-question="2" data-correct="true">Б. Всегда есть только свежую еду</button>
+                            <button class="w-full text-left p-3 rounded-lg block-bg pixel-button hover:bg-gray-700" data-question="2" data-correct="false">В. Спрятаться в пещере</button>
+                        </div>
+                    </div>
+                    <!-- Question 3 -->
+                    <div>
+                        <p class="text-lg font-bold mb-2">3. Ты нашел озеро, вода в котором выглядит мутной. Как сделать её безопасной для питья?</p>
+                        <div class="space-y-2 text-sm">
+                            <button class="w-full text-left p-3 rounded-lg block-bg pixel-button hover:bg-gray-700" data-question="3" data-correct="false">А. Добавить в неё паучий глаз</button>
+                            <button class="w-full text-left p-3 rounded-lg block-bg pixel-button hover:bg-gray-700" data-question="3" data-correct="true">Б. Вскипятить её</button>
+                            <button class="w-full text-left p-3 rounded-lg block-bg pixel-button hover:bg-gray-700" data-question="3" data-correct="false">В. Использовать её для полива грядок</button>
+                        </div>
+                    </div>
+                    <!-- Question 4 -->
+                    <div>
+                        <p class="text-lg font-bold mb-2">4. Ты принёс домой сырую курицу, найденную в мире. Как её приготовить, чтобы не заболеть?</p>
+                        <div class="space-y-2 text-sm">
+                            <button class="w-full text-left p-3 rounded-lg block-bg pixel-button hover:bg-gray-700" data-question="4" data-correct="false">А. Просто съесть, как есть</button>
+                            <button class="w-full text-left p-3 rounded-lg block-bg pixel-button hover:bg-gray-700" data-question="4" data-correct="false">Б. Отдать свинье</button>
+                            <button class="w-full text-left p-3 rounded-lg block-bg pixel-button hover:bg-gray-700" data-question="4" data-correct="true">В. Хорошо прожарить</button>
+                        </div>
+                    </div>
+                    <!-- Question 5 -->
+                    <div>
+                        <p class="text-lg font-bold mb-2">5. Что не является опасным для твоего "инвентаря" (тела)?</p>
+                        <div class="space-y-2 text-sm">
+                            <button class="w-full text-left p-3 rounded-lg block-bg pixel-button hover:bg-gray-700" data-question="5" data-correct="false">А. Грязные руки</button>
+                            <button class="w-full text-left p-3 rounded-lg block-bg pixel-button hover:bg-gray-700" data-question="5" data-correct="false">Б. Сырая рыба</button>
+                            <button class="w-full text-left p-3 rounded-lg block-bg pixel-button hover:bg-gray-700" data-question="5" data-correct="true">В. Жареный стейк</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <button id="submitQuizBtn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg text-lg pixel-button">
+                        Завершить испытание
+                    </button>
+                </div>
+
+                <div id="quizResult" class="mt-4 text-xl font-bold text-center" style="display: none;"></div>
+            </div>
+            <div class="mt-4 text-center">
+                <button id="hideQuizBtn" class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg text-lg pixel-button">
+                    Вернуться назад
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('showTheoryBtn').addEventListener('click', function() {
+            document.getElementById('theory').style.display = 'block';
+            this.style.display = 'none';
+        });
+
+        document.getElementById('hideTheoryBtn').addEventListener('click', function() {
+            document.getElementById('theory').style.display = 'none';
+            document.getElementById('showTheoryBtn').style.display = 'block';
+            document.getElementById('quiz').style.display = 'none';
+        });
+
+        document.getElementById('showQuizBtn').addEventListener('click', function() {
+            document.getElementById('quiz').style.display = 'block';
+        });
+
+        document.getElementById('hideQuizBtn').addEventListener('click', function() {
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('showTheoryBtn').style.display = 'block';
+            document.getElementById('theory').style.display = 'none';
+            document.getElementById('quizResult').style.display = 'none';
+        });
+        
+        document.getElementById('submitQuizBtn').addEventListener('click', function() {
+            let score = 0;
+            let questions = [1, 2, 3, 4, 5];
+            let allAnswered = true;
+
+            questions.forEach(q => {
+                let buttons = document.querySelectorAll(`button[data-question="${q}"]`);
+                let answered = false;
+                buttons.forEach(button => {
+                    if (button.classList.contains('correct-answer')) {
+                        score++;
+                        answered = true;
+                    }
+                });
+                if (!answered) {
+                    allAnswered = false;
+                }
+            });
+
+            const resultDiv = document.getElementById('quizResult');
+            if (allAnswered) {
+                resultDiv.style.display = 'block';
+                if (score === 5) {
+                    resultDiv.textContent = `Поздравляем! Ты прошёл испытание на выживание! Правильных ответов: ${score} из 5.`;
+                    resultDiv.className = 'mt-4 text-xl font-bold text-green-400 text-center';
+                } else {
+                    resultDiv.textContent = `Результат: ${score} из 5. Нужно перепройти курс!`;
+                    resultDiv.className = 'mt-4 text-xl font-bold text-yellow-400 text-center';
+                }
+            } else {
+                resultDiv.textContent = 'Ответь на все вопросы, чтобы увидеть результат!';
+                resultDiv.className = 'mt-4 text-xl font-bold text-red-400 text-center';
+                resultDiv.style.display = 'block';
+            }
+        });
+
+        document.querySelectorAll('#quiz button').forEach(button => {
+            button.addEventListener('click', function() {
+                let questionNumber = this.getAttribute('data-question');
+                let isCorrect = this.getAttribute('data-correct') === 'true';
+                
+                // Reset other buttons for the same question
+                document.querySelectorAll(`button[data-question="${questionNumber}"]`).forEach(btn => {
+                    btn.classList.remove('correct-answer', 'incorrect-answer');
+                });
+                
+                if (isCorrect) {
+                    this.classList.add('correct-answer');
+                } else {
+                    this.classList.add('incorrect-answer');
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
